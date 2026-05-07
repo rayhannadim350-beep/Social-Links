@@ -1,0 +1,354 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammad Nadim - Social Links</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: radial-gradient(circle at top, rgba(120, 170, 255, 0.12), transparent 30%),
+                        radial-gradient(circle at right, rgba(90, 120, 255, 0.16), transparent 25%),
+                        linear-gradient(135deg, #07142e 0%, #021028 50%, #090f2d 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: #bebebe;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+            padding: 40px;
+            max-width: 900px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .profile-section {
+            margin-bottom: 40px;
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .profile-name {
+            font-size: 28px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .profile-bio {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .sections-row {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: nowrap;
+            margin-bottom: 25px;
+        }
+
+        .section {
+            flex: 1 1 300px;
+            min-width: 250px;
+            text-align: left;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #667eea;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: stretch;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            color: white;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.3s ease;
+            z-index: 1;
+        }
+
+        .social-link:hover::before {
+            left: 100%;
+        }
+
+        .social-link i {
+            margin-right: 12px;
+            font-size: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .social-link span {
+            position: relative;
+            z-index: 2;
+        }
+
+        .social-link:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Platform Colors */
+        .twitter {
+            background: linear-gradient(135deg, #1DA1F2 0%, #1a91da 100%);
+        }
+
+        .facebook {
+            background: linear-gradient(135deg, #4267B2 0%, #365899 100%);
+        }
+
+        .instagram {
+            background: linear-gradient(135deg, #E4405F 0%, #fd1d1d 100%);
+        }
+
+        .linkedin {
+            background: linear-gradient(135deg, #0A66C2 0%, #0952b4 100%);
+        }
+
+        .github {
+            background: linear-gradient(135deg, #333333 0%, #24292e 100%);
+        }
+
+        .youtube {
+            background: linear-gradient(135deg, #FF0000 0%, #cc0000 100%);
+        }
+
+        .tiktok {
+            background: #000000;
+            color: white;
+        }
+
+        .telegram {
+            background: linear-gradient(135deg, #0088cc 0%, #0077b5 100%);
+        }
+
+        .whatsapp {
+            background: linear-gradient(135deg, #25D366 0%, #20ba5a 100%);
+        }
+
+        .email {
+            background: linear-gradient(135deg, #EA4335 0%, #d33425 100%);
+        }
+
+        .copy-btn {
+            padding: 12px 24px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .copy-btn:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+            font-size: 12px;
+            color: #000000;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            .profile-name {
+                font-size: 24px;
+            }
+
+            .profile-image {
+                width: 100px;
+                height: 100px;
+                font-size: 40px;
+            }
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+        }
+
+        .toast.show {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-section">
+            <div class="profile-image">
+                <img src="IMG_6068 2.jpg" alt="Mohammad Nadim">
+            </div>
+            <h1 class="profile-name">Mohammad Nadim</h1>
+            <p class="profile-bio">Connect with me on social media</p>
+        </div>
+
+        <div class="sections-row">
+            <!-- Talks Section -->
+            <div class="section">
+                <h2 class="section-title">Talks</h2>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/nadim_faith0" target="_blank" class="social-link instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+
+                    <a href="https://www.tiktok.com/@nadim_faith" target="_blank" class="social-link tiktok">
+                        <i class="fab fa-tiktok"></i>
+                        <span>TikTok</span>
+                    </a>
+
+                    <a href="https://www.youtube.com/@nadim_faith0" target="_blank" class="social-link youtube">
+                        <i class="fab fa-youtube"></i>
+                        <span>YouTube</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Recitation Section -->
+            <div class="section">
+                <h2 class="section-title">Recitation</h2>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/nadim_recites" target="_blank" class="social-link instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+
+                    <a href="https://www.tiktok.com/@nadim_recites" target="_blank" class="social-link tiktok">
+                        <i class="fab fa-tiktok"></i>
+                        <span>TikTok</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2026 Mohammad Nadim. All rights reserved.</p>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script>
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        function copyLinks() {
+            const sections = document.querySelectorAll('.section');
+            let text = 'Mohammad Nadim - Social Media Links\n\n';
+            
+            sections.forEach(section => {
+                const title = section.querySelector('.section-title').textContent;
+                text += `${title}:\n`;
+                
+                const links = section.querySelectorAll('.social-link');
+                links.forEach(link => {
+                    const platform = link.querySelector('span').textContent;
+                    const url = link.href;
+                    text += `${platform}: ${url}\n`;
+                });
+                text += '\n';
+            });
+
+            navigator.clipboard.writeText(text).then(() => {
+                showToast('Links copied to clipboard!');
+            }).catch(() => {
+                showToast('Failed to copy links');
+            });
+        }
+    </script>
+</body>
+</html>
